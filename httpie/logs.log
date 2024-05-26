@@ -1,0 +1,126 @@
+GET /api/runs HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: localhost:8081
+User-Agent: HTTPie/3.2.2
+
+
+
+HTTP/1.1 200 
+Connection: keep-alive
+Content-Type: application/json
+Date: Sun, 26 May 2024 07:58:00 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+[
+    {
+        "completedOn": "2024-05-26T12:57:54.911486",
+        "id": 1,
+        "location": "OUTDOOR",
+        "miles": 20,
+        "startedOn": "2024-05-26T10:57:54.91148",
+        "title": "first run"
+    },
+    {
+        "completedOn": "2024-05-28T12:57:54.91162",
+        "id": 2,
+        "location": "INDOOR",
+        "miles": 20,
+        "startedOn": "2024-05-28T10:57:54.911615",
+        "title": "second run"
+    }
+]GET /api/runs/1 HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: localhost:8081
+User-Agent: HTTPie/3.2.2
+
+
+
+HTTP/1.1 200 
+Connection: keep-alive
+Content-Type: application/json
+Date: Sun, 26 May 2024 07:58:00 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "completedOn": "2024-05-26T12:57:54.911486",
+    "id": 1,
+    "location": "OUTDOOR",
+    "miles": 20,
+    "startedOn": "2024-05-26T10:57:54.91148",
+    "title": "first run"
+}GET /api/runs/2 HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: localhost:8081
+User-Agent: HTTPie/3.2.2
+
+
+
+HTTP/1.1 200 
+Connection: keep-alive
+Content-Type: application/json
+Date: Sun, 26 May 2024 07:58:00 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "completedOn": "2024-05-28T12:57:54.91162",
+    "id": 2,
+    "location": "INDOOR",
+    "miles": 20,
+    "startedOn": "2024-05-28T10:57:54.911615",
+    "title": "second run"
+}GET /api/runs/3 HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Host: localhost:8081
+User-Agent: HTTPie/3.2.2
+
+
+
+HTTP/1.1 404 
+Connection: keep-alive
+Content-Type: application/json
+Date: Sun, 26 May 2024 07:58:00 GMT
+Keep-Alive: timeout=60
+Transfer-Encoding: chunked
+
+{
+    "error": "Not Found",
+    "message": "404 NOT_FOUND",
+    "path": "/api/runs/3",
+    "status": 404,
+    "timestamp": "2024-05-26T07:58:00.864+00:00",
+    "trace": "org.springframework.web.server.ResponseStatusException: 404 NOT_FOUND\n\tat com.leumi.springboot3demo.run.RunController.findById(RunController.java:41)\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255)\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188)\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926)\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831)\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\n\tat java.base/java.lang.Thread.run(Thread.java:1583)\n"
+}POST /api/runs HTTP/1.1
+Accept: application/json, */*;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 160
+Content-Type: application/json
+Host: localhost:8081
+User-Agent: HTTPie/3.2.2
+
+{
+    "completedOn": "2024-05-26T14:00:00.00000",
+    "id": "3",
+    "location": "INDOOR",
+    "miles": "10",
+    "startedOn": "2024-05-26T12:00:00.00000",
+    "title": "afternoon run"
+}
+
+HTTP/1.1 201 
+Connection: keep-alive
+Content-Length: 0
+Date: Sun, 26 May 2024 07:58:00 GMT
+Keep-Alive: timeout=60
+
